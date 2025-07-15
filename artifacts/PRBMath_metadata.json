@@ -1,0 +1,48 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"author": "Paul Razvan Berg",
+			"kind": "dev",
+			"methods": {},
+			"title": "PRBMath",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Smart contract library for advanced fixed-point math that works with uint256 and int256.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/lib/PRBMath.sol": "PRBMath"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/lib/PRBMath.sol": {
+			"keccak256": "0x9adb90635cbd067f1d25b2979c8816564ea1018dbbbd0d865ac5e4b29d6d9bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7e55f9be29babfd960a697723aaa4f9142dc3d00251eda8e4853ddb65be70cb9",
+				"dweb:/ipfs/QmdoV8yDxLFHhyKb8HFRzLjmEopyfMC1rX8iyiePSEFc97"
+			]
+		}
+	},
+	"version": 1
+}

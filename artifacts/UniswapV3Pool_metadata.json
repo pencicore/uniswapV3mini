@@ -1,0 +1,815 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token0_",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token1_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint160",
+						"name": "sqrtPriceX96",
+						"type": "uint160"
+					},
+					{
+						"internalType": "int24",
+						"name": "tick",
+						"type": "int24"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "InsufficientInputAmount",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidTickRange",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ZeroLiquidity",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickLower",
+						"type": "int24"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickUpper",
+						"type": "int24"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "amount",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"name": "Burn",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickLower",
+						"type": "int24"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickUpper",
+						"type": "int24"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "amount0",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "amount1",
+						"type": "uint128"
+					}
+				],
+				"name": "Collect",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "amount0",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "amount1",
+						"type": "uint128"
+					}
+				],
+				"name": "CollectProtocol",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "paid0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "paid1",
+						"type": "uint256"
+					}
+				],
+				"name": "Flash",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "observationCardinalityNextOld",
+						"type": "uint16"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint16",
+						"name": "observationCardinalityNextNew",
+						"type": "uint16"
+					}
+				],
+				"name": "IncreaseObservationCardinalityNext",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint160",
+						"name": "sqrtPriceX96",
+						"type": "uint160"
+					},
+					{
+						"indexed": false,
+						"internalType": "int24",
+						"name": "tick",
+						"type": "int24"
+					}
+				],
+				"name": "Initialize",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickLower",
+						"type": "int24"
+					},
+					{
+						"indexed": true,
+						"internalType": "int24",
+						"name": "tickUpper",
+						"type": "int24"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "amount",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"name": "Mint",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "feeProtocol0Old",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "feeProtocol1Old",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "feeProtocol0New",
+						"type": "uint8"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "feeProtocol1New",
+						"type": "uint8"
+					}
+				],
+				"name": "SetFeeProtocol",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "int256",
+						"name": "amount0",
+						"type": "int256"
+					},
+					{
+						"indexed": false,
+						"internalType": "int256",
+						"name": "amount1",
+						"type": "int256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint160",
+						"name": "sqrtPriceX96",
+						"type": "uint160"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "int24",
+						"name": "tick",
+						"type": "int24"
+					}
+				],
+				"name": "Swap",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "liquidity",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "int24",
+						"name": "lowerTick",
+						"type": "int24"
+					},
+					{
+						"internalType": "int24",
+						"name": "upperTick",
+						"type": "int24"
+					},
+					{
+						"internalType": "uint128",
+						"name": "amount",
+						"type": "uint128"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "mint",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "positions",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "slot0",
+				"outputs": [
+					{
+						"internalType": "uint160",
+						"name": "sqrtPriceX96",
+						"type": "uint160"
+					},
+					{
+						"internalType": "int24",
+						"name": "tick",
+						"type": "int24"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "swap",
+				"outputs": [
+					{
+						"internalType": "int256",
+						"name": "amount0",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "amount1",
+						"type": "int256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int16",
+						"name": "",
+						"type": "int16"
+					}
+				],
+				"name": "tickBitmap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int24",
+						"name": "",
+						"type": "int24"
+					}
+				],
+				"name": "ticks",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "initialized",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint128",
+						"name": "liquidity",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token0",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "token1",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"Burn(address,int24,int24,uint128,uint256,uint256)": {
+					"details": "Does not withdraw any fees earned by the liquidity position, which must be withdrawn via #collect",
+					"params": {
+						"amount": "The amount of liquidity to remove",
+						"amount0": "The amount of token0 withdrawn",
+						"amount1": "The amount of token1 withdrawn",
+						"owner": "The owner of the position for which liquidity is removed",
+						"tickLower": "The lower tick of the position",
+						"tickUpper": "The upper tick of the position"
+					}
+				},
+				"Collect(address,address,int24,int24,uint128,uint128)": {
+					"details": "Collect events may be emitted with zero amount0 and amount1 when the caller chooses not to collect fees",
+					"params": {
+						"amount0": "The amount of token0 fees collected",
+						"amount1": "The amount of token1 fees collected",
+						"owner": "The owner of the position for which fees are collected",
+						"tickLower": "The lower tick of the position",
+						"tickUpper": "The upper tick of the position"
+					}
+				},
+				"CollectProtocol(address,address,uint128,uint128)": {
+					"params": {
+						"amount0": "The amount of token1 protocol fees that is withdrawn",
+						"recipient": "The address that receives the collected protocol fees",
+						"sender": "The address that collects the protocol fees"
+					}
+				},
+				"Flash(address,address,uint256,uint256,uint256,uint256)": {
+					"params": {
+						"amount0": "The amount of token0 that was flashed",
+						"amount1": "The amount of token1 that was flashed",
+						"paid0": "The amount of token0 paid for the flash, which can exceed the amount0 plus the fee",
+						"paid1": "The amount of token1 paid for the flash, which can exceed the amount1 plus the fee",
+						"recipient": "The address that received the tokens from flash",
+						"sender": "The address that initiated the swap call, and that received the callback"
+					}
+				},
+				"IncreaseObservationCardinalityNext(uint16,uint16)": {
+					"details": "observationCardinalityNext is not the observation cardinality until an observation is written at the index just before a mint/swap/burn.",
+					"params": {
+						"observationCardinalityNextNew": "The updated value of the next observation cardinality",
+						"observationCardinalityNextOld": "The previous value of the next observation cardinality"
+					}
+				},
+				"Initialize(uint160,int24)": {
+					"details": "Mint/Burn/Swap cannot be emitted by the pool before Initialize",
+					"params": {
+						"sqrtPriceX96": "The initial sqrt price of the pool, as a Q64.96",
+						"tick": "The initial tick of the pool, i.e. log base 1.0001 of the starting price of the pool"
+					}
+				},
+				"Mint(address,address,int24,int24,uint128,uint256,uint256)": {
+					"params": {
+						"amount": "The amount of liquidity minted to the position range",
+						"amount0": "How much token0 was required for the minted liquidity",
+						"amount1": "How much token1 was required for the minted liquidity",
+						"owner": "The owner of the position and recipient of any minted liquidity",
+						"sender": "The address that minted the liquidity",
+						"tickLower": "The lower tick of the position",
+						"tickUpper": "The upper tick of the position"
+					}
+				},
+				"SetFeeProtocol(uint8,uint8,uint8,uint8)": {
+					"params": {
+						"feeProtocol0New": "The updated value of the token0 protocol fee",
+						"feeProtocol0Old": "The previous value of the token0 protocol fee",
+						"feeProtocol1New": "The updated value of the token1 protocol fee",
+						"feeProtocol1Old": "The previous value of the token1 protocol fee"
+					}
+				},
+				"Swap(address,address,int256,int256,uint160,uint128,int24)": {
+					"params": {
+						"amount0": "The delta of the token0 balance of the pool",
+						"amount1": "The delta of the token1 balance of the pool",
+						"liquidity": "The liquidity of the pool after the swap",
+						"recipient": "The address that received the output of the swap",
+						"sender": "The address that initiated the swap call, and that received the callback",
+						"sqrtPriceX96": "The sqrt(price) of the pool after the swap, as a Q64.96",
+						"tick": "The log base 1.0001 of price of the pool after the swap"
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"Burn(address,int24,int24,uint128,uint256,uint256)": {
+					"notice": "Emitted when a position's liquidity is removed"
+				},
+				"Collect(address,address,int24,int24,uint128,uint128)": {
+					"notice": "Emitted when fees are collected by the owner of a position"
+				},
+				"CollectProtocol(address,address,uint128,uint128)": {
+					"notice": "Emitted when the collected protocol fees are withdrawn by the factory owner"
+				},
+				"Flash(address,address,uint256,uint256,uint256,uint256)": {
+					"notice": "Emitted by the pool for any flashes of token0/token1"
+				},
+				"IncreaseObservationCardinalityNext(uint16,uint16)": {
+					"notice": "Emitted by the pool for increases to the number of observations that can be stored"
+				},
+				"Initialize(uint160,int24)": {
+					"notice": "Emitted exactly once by a pool when #initialize is first called on the pool"
+				},
+				"Mint(address,address,int24,int24,uint128,uint256,uint256)": {
+					"notice": "Emitted when liquidity is minted for a given position"
+				},
+				"SetFeeProtocol(uint8,uint8,uint8,uint8)": {
+					"notice": "Emitted when the protocol fee is changed by the pool"
+				},
+				"Swap(address,address,int256,int256,uint160,uint128,int24)": {
+					"notice": "Emitted by the pool for any swaps between token0 and token1"
+				}
+			},
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/UniswapV3Pool.sol": "UniswapV3Pool"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/UniswapV3Pool.sol": {
+			"keccak256": "0xe8d9c16fda9d689cdbe59d3fb5c10ec7da1ce79e53411b0a136677036e4a1e1c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://65aac3f4ce1a09867682399b1ed66c65ca8b701146ea1978e11f9e7337b08617",
+				"dweb:/ipfs/QmenLB47cjTosR5QkWCuhUYc4AwdJtKPvyT33PYavEXEYK"
+			]
+		},
+		"src/interfaces/IERC20.sol": {
+			"keccak256": "0x8f7e66ebc62dc73aa8871ca29cc1f93d1fffa19a569972bfd58dcbb674329a90",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://6b8cc533e3d0d71cbe0663f17395713b798dfc419cc543d79bd145c2062ffcab",
+				"dweb:/ipfs/QmRHswF3a49hkXrBGssMSu1r2H2gBWBVbHJ3MrF56L5HRW"
+			]
+		},
+		"src/interfaces/callback/IUniswapV3MintCallback.sol": {
+			"keccak256": "0x8dbe3d6c23da7bb08718f050ff8474f94367f833c0587670435eb2d4b4b3ae79",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://928a138d8c7953049f7f06dc4b1c9fdc244c129edbecf550b5cc9d079bed3405",
+				"dweb:/ipfs/QmZM7eTaxzp9LeQqrrzKuJt15P7BvT6Ba32hazdKrfsJuz"
+			]
+		},
+		"src/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x825cf10c30e3c8676fb8a9055948a59841c44387bdc50a2271345282753c38ed",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://8379da8abbc993cb98540120ab4a0cdaee66e8a53a1792fb099089f626d946c4",
+				"dweb:/ipfs/QmSSb8GPR4S6WCpgrYZwhYiDPMKqkX3Pm3bsMVcPuvrWuj"
+			]
+		},
+		"src/interfaces/pool/IUniswapV3PoolEvents.sol": {
+			"keccak256": "0xb8e8f6f7326fc86450a2e8daba3194709c9c92f552fe8aea44cb7c77dbff4ad2",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://a8ef383b9b4142ea5774816a87d48b64a29e922edc83af6fb15b3098cef9819f",
+				"dweb:/ipfs/QmdZXMdDWgMEFMS8rQtR5QN5KdLSZUuSmd6dQsjAKN8DFA"
+			]
+		},
+		"src/lib/BitMath.sol": {
+			"keccak256": "0x7a2051864fa0e8705564bde430557a6e9bc6d7765551f1a3b6ef8c8604eee313",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://28e81d5a4f36365c170097e7c5f208fcef3ceb87d082bf79450e69a678cd0c78",
+				"dweb:/ipfs/QmNrHt2Vw2iLQ7JNRsVafYnaJqxxDSHUCQ8W9wMxosheRV"
+			]
+		},
+		"src/lib/FixedPoint96.sol": {
+			"keccak256": "0x2af6468434f30acf1bf0fa92c02c1bcfded878b568fd376687dceeaae2ce5000",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://ee84c31e8d79f8ca5538fc453bc7b52b9757c3400337a6cf03303631fbc9f620",
+				"dweb:/ipfs/QmfWC816uyiXW8UARZJcgTGnHyoYgdfNRZ9Awtxw2TDFmK"
+			]
+		},
+		"src/lib/Math.sol": {
+			"keccak256": "0x9011dcd46af40bd23344240e7a9535cd0eb9dab637a3e7c81333e837071ed64f",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://c0d54cec48e2a1d4ed65e26fa04e0eeb712ad8b6707d4c79a8d600e69e39b4a8",
+				"dweb:/ipfs/QmUrJVytg1g6ixzynY7Mp2SiH6NFrgBtMNWG7YHS2Sx7oW"
+			]
+		},
+		"src/lib/PRBMath.sol": {
+			"keccak256": "0x9adb90635cbd067f1d25b2979c8816564ea1018dbbbd0d865ac5e4b29d6d9bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7e55f9be29babfd960a697723aaa4f9142dc3d00251eda8e4853ddb65be70cb9",
+				"dweb:/ipfs/QmdoV8yDxLFHhyKb8HFRzLjmEopyfMC1rX8iyiePSEFc97"
+			]
+		},
+		"src/lib/Position.sol": {
+			"keccak256": "0x62d2ab06531ac4a0f60c9daa994ae38e6a82c2195022fa4b04c0cf589468f8d2",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://3be896ccd46161b135499a4a736f719d4b10112af999df66cddd9734fc52ab06",
+				"dweb:/ipfs/QmcntWtU1Qjx586SPS3GDgNrGMAyV13VrMgdQopXQAY9AN"
+			]
+		},
+		"src/lib/Tick.sol": {
+			"keccak256": "0x35a4d5dc0146b72ed1e530c16d691fa841d2edd786336adea1a306e698bc381a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://1d17f41a71529f5eccf9c3af0a8d4693049950a7f46f6c5c97db70fd14d866cf",
+				"dweb:/ipfs/QmcUjNxYXpBMErZpxF65XeA2fVg6R9sPy6gFGZEEcFR9Ud"
+			]
+		},
+		"src/lib/TickBitmap.sol": {
+			"keccak256": "0xa430211db40b0cf69be4f166c7764ac3d2ab3a494ebfdec27d1d3e69bd961d1c",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://12ed04d4d2ef0939d532a400f6a3e8dddbad71f9938f1caccd624f463e70296a",
+				"dweb:/ipfs/Qmcpf15LJRtGFT81KR2unB3YLKaUF5naiSJkiDYtqnFpfD"
+			]
+		},
+		"src/lib/TickMath.sol": {
+			"keccak256": "0x66bbfe54186fc7cc57565dbb20889526579a661c7971f7d4276bd7a600acbe81",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://5bf2d491cd7ad9c8325715ad81245f0bb36e178b53e3acd1424af01ec09c48a7",
+				"dweb:/ipfs/QmfXyEWsYun2KLtZALaN7HRGUxViEzr2gWkvGULWTtnRAt"
+			]
+		}
+	},
+	"version": 1
+}

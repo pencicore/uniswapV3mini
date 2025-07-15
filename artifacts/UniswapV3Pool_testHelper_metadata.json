@@ -1,0 +1,272 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
+					}
+				],
+				"name": "log",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "erc0",
+				"outputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "erc1",
+				"outputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pool",
+				"outputs": [
+					{
+						"internalType": "contract UniswapV3Pool",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "uniswapV3MintCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "int256",
+						"name": "amount0",
+						"type": "int256"
+					},
+					{
+						"internalType": "int256",
+						"name": "amount1",
+						"type": "int256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "uniswapV3SwapCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"test/UniswapV3Pool_testHelper.sol": "UniswapV3Pool_testHelper"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"/src/interfaces/IERC20.sol": {
+			"keccak256": "0x8f7e66ebc62dc73aa8871ca29cc1f93d1fffa19a569972bfd58dcbb674329a90",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://6b8cc533e3d0d71cbe0663f17395713b798dfc419cc543d79bd145c2062ffcab",
+				"dweb:/ipfs/QmRHswF3a49hkXrBGssMSu1r2H2gBWBVbHJ3MrF56L5HRW"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0xf2560b5386574153057104d19a9e68a32ee912cf23c0c8df1fe9a0607f42d543",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a63166e036b040826baa513772451a79925daa304b38749100efb089ac07cdc2",
+				"dweb:/ipfs/QmUtMTxUFKU6a5oFXsEJnTPvb3QPb7GDDmSv5yZ1jFHDwR"
+			]
+		},
+		"src/UniswapV3Pool.sol": {
+			"keccak256": "0x336c52c81a1a2a80fb4e2ffa181c019e65c048df9db27224559c5056d56fa68d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f8af6e38f7e4106e76cccc969d6d4aa0b36dd330df56a4d4da4fc101dc6a2977",
+				"dweb:/ipfs/QmawJRnASEzchrzKwsW64mcoRevRCow8HimQKR6GWAgENt"
+			]
+		},
+		"src/interfaces/IERC20.sol": {
+			"keccak256": "0x8f7e66ebc62dc73aa8871ca29cc1f93d1fffa19a569972bfd58dcbb674329a90",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://6b8cc533e3d0d71cbe0663f17395713b798dfc419cc543d79bd145c2062ffcab",
+				"dweb:/ipfs/QmRHswF3a49hkXrBGssMSu1r2H2gBWBVbHJ3MrF56L5HRW"
+			]
+		},
+		"src/interfaces/callback/IUniswapV3MintCallback.sol": {
+			"keccak256": "0x8dbe3d6c23da7bb08718f050ff8474f94367f833c0587670435eb2d4b4b3ae79",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://928a138d8c7953049f7f06dc4b1c9fdc244c129edbecf550b5cc9d079bed3405",
+				"dweb:/ipfs/QmZM7eTaxzp9LeQqrrzKuJt15P7BvT6Ba32hazdKrfsJuz"
+			]
+		},
+		"src/interfaces/callback/IUniswapV3SwapCallback.sol": {
+			"keccak256": "0x825cf10c30e3c8676fb8a9055948a59841c44387bdc50a2271345282753c38ed",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://8379da8abbc993cb98540120ab4a0cdaee66e8a53a1792fb099089f626d946c4",
+				"dweb:/ipfs/QmSSb8GPR4S6WCpgrYZwhYiDPMKqkX3Pm3bsMVcPuvrWuj"
+			]
+		},
+		"src/interfaces/pool/IUniswapV3PoolEvents.sol": {
+			"keccak256": "0xb8e8f6f7326fc86450a2e8daba3194709c9c92f552fe8aea44cb7c77dbff4ad2",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://a8ef383b9b4142ea5774816a87d48b64a29e922edc83af6fb15b3098cef9819f",
+				"dweb:/ipfs/QmdZXMdDWgMEFMS8rQtR5QN5KdLSZUuSmd6dQsjAKN8DFA"
+			]
+		},
+		"src/lib/BitMath.sol": {
+			"keccak256": "0x7a2051864fa0e8705564bde430557a6e9bc6d7765551f1a3b6ef8c8604eee313",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://28e81d5a4f36365c170097e7c5f208fcef3ceb87d082bf79450e69a678cd0c78",
+				"dweb:/ipfs/QmNrHt2Vw2iLQ7JNRsVafYnaJqxxDSHUCQ8W9wMxosheRV"
+			]
+		},
+		"src/lib/FixedPoint96.sol": {
+			"keccak256": "0x2af6468434f30acf1bf0fa92c02c1bcfded878b568fd376687dceeaae2ce5000",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://ee84c31e8d79f8ca5538fc453bc7b52b9757c3400337a6cf03303631fbc9f620",
+				"dweb:/ipfs/QmfWC816uyiXW8UARZJcgTGnHyoYgdfNRZ9Awtxw2TDFmK"
+			]
+		},
+		"src/lib/Math.sol": {
+			"keccak256": "0x9011dcd46af40bd23344240e7a9535cd0eb9dab637a3e7c81333e837071ed64f",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://c0d54cec48e2a1d4ed65e26fa04e0eeb712ad8b6707d4c79a8d600e69e39b4a8",
+				"dweb:/ipfs/QmUrJVytg1g6ixzynY7Mp2SiH6NFrgBtMNWG7YHS2Sx7oW"
+			]
+		},
+		"src/lib/PRBMath.sol": {
+			"keccak256": "0x9adb90635cbd067f1d25b2979c8816564ea1018dbbbd0d865ac5e4b29d6d9bf1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7e55f9be29babfd960a697723aaa4f9142dc3d00251eda8e4853ddb65be70cb9",
+				"dweb:/ipfs/QmdoV8yDxLFHhyKb8HFRzLjmEopyfMC1rX8iyiePSEFc97"
+			]
+		},
+		"src/lib/Position.sol": {
+			"keccak256": "0x62d2ab06531ac4a0f60c9daa994ae38e6a82c2195022fa4b04c0cf589468f8d2",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://3be896ccd46161b135499a4a736f719d4b10112af999df66cddd9734fc52ab06",
+				"dweb:/ipfs/QmcntWtU1Qjx586SPS3GDgNrGMAyV13VrMgdQopXQAY9AN"
+			]
+		},
+		"src/lib/Tick.sol": {
+			"keccak256": "0x35a4d5dc0146b72ed1e530c16d691fa841d2edd786336adea1a306e698bc381a",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://1d17f41a71529f5eccf9c3af0a8d4693049950a7f46f6c5c97db70fd14d866cf",
+				"dweb:/ipfs/QmcUjNxYXpBMErZpxF65XeA2fVg6R9sPy6gFGZEEcFR9Ud"
+			]
+		},
+		"src/lib/TickBitmap.sol": {
+			"keccak256": "0xa430211db40b0cf69be4f166c7764ac3d2ab3a494ebfdec27d1d3e69bd961d1c",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://12ed04d4d2ef0939d532a400f6a3e8dddbad71f9938f1caccd624f463e70296a",
+				"dweb:/ipfs/Qmcpf15LJRtGFT81KR2unB3YLKaUF5naiSJkiDYtqnFpfD"
+			]
+		},
+		"src/lib/TickMath.sol": {
+			"keccak256": "0x66bbfe54186fc7cc57565dbb20889526579a661c7971f7d4276bd7a600acbe81",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://5bf2d491cd7ad9c8325715ad81245f0bb36e178b53e3acd1424af01ec09c48a7",
+				"dweb:/ipfs/QmfXyEWsYun2KLtZALaN7HRGUxViEzr2gWkvGULWTtnRAt"
+			]
+		},
+		"test/ERC20.sol": {
+			"keccak256": "0xbbb5fe47c15de4af3db910b79164debe125088ad59d24da73beedcd6bc6c96f9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5b99c866cc0d09a9de805d453c339c80a47e7ad335bdf01361462f3ac29cc670",
+				"dweb:/ipfs/Qme6nto9KEVFTfzpqWVWcde5vQxU84h6MJXj8MfdWgTj6i"
+			]
+		},
+		"test/UniswapV3Pool_testHelper.sol": {
+			"keccak256": "0x52c273b054d6c502f1148e5d65963283f7f282f94d996bb0a46cf5d34fc01ae6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://78b931f720a9ebd281b2448e93538570350c4cae09f57197c37c86714863d481",
+				"dweb:/ipfs/QmPM9sUZE8U9396dBKqMmggqe1uoKaFgYF8PfiZ28i7wYb"
+			]
+		}
+	},
+	"version": 1
+}

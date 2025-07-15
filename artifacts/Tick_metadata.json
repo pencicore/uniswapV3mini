@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/lib/Tick.sol": "Tick"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/lib/Tick.sol": {
+			"keccak256": "0x156ccca1e5e19abdb9f695e01ce128da7edc70c5e1df7c1594a9fcb6fdd9cd64",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://031a328d3d0b817b43df06810ca53447139c1c26f0254b8f3098382ec7545478",
+				"dweb:/ipfs/QmVeLbzKC4fxEXxcxuW5xVZaerz2CEtwSxTgJd8CFoSLxQ"
+			]
+		}
+	},
+	"version": 1
+}

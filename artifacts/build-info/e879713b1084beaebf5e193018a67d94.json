@@ -1,0 +1,1069 @@
+{
+	"id": "e879713b1084beaebf5e193018a67d94",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.30",
+	"solcLongVersion": "0.8.30+commit.73712a01",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"src/lib/Tick.sol": {
+				"content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.14;\r\n\r\nlibrary Tick {\r\n    struct Info {\r\n        bool initialized;\r\n        uint128 liquidity;\r\n    }\r\n    \r\n    function update(\r\n        mapping(int24 => Tick.Info) storage self,\r\n        int24 tick,\r\n        uint128 liquidityDelta\r\n    ) internal {\r\n        Tick.Info storage tickInfo = self[tick];\r\n        uint128 liquidityBefore = tickInfo.liquidity;\r\n        uint128 liquidityAfter = liquidityBefore + liquidityDelta;\r\n\r\n        if (liquidityBefore == 0) {\r\n            tickInfo.initialized = true;\r\n        }\r\n\r\n        tickInfo.liquidity = liquidityAfter;\r\n    }\r\n\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"src/lib/Tick.sol": {
+				"Tick": {
+					"abi": [],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"src/lib/Tick.sol\":61:631  library Tick {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, 0x4e487b7100000000000000000000000000000000000000000000000000000000)\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"src/lib/Tick.sol\":61:631  library Tick {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      revert(0x00, 0x00)\n\n    auxdata: 0xa26469706673582212201b1ee87316bf7302e33d09a24f8e505ac02e4be3645eb2a994252c19cba1956d64736f6c634300081e0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "6055604b600b8282823980515f1a607314603f577f4e487b71000000000000000000000000000000000000000000000000000000005f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f5ffdfea26469706673582212201b1ee87316bf7302e33d09a24f8e505ac02e4be3645eb2a994252c19cba1956d64736f6c634300081e0033",
+							"opcodes": "PUSH1 0x55 PUSH1 0x4B PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x3F JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SHL 0x1E 0xE8 PUSH20 0x16BF7302E33D09A24F8E505AC02E4BE3645EB2A9 SWAP5 0x25 0x2C NOT 0xCB LOG1 SWAP6 PUSH14 0x64736F6C634300081E0033000000 ",
+							"sourceMap": "61:570:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "730000000000000000000000000000000000000000301460806040525f5ffdfea26469706673582212201b1ee87316bf7302e33d09a24f8e505ac02e4be3645eb2a994252c19cba1956d64736f6c634300081e0033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 PUSH0 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SHL 0x1E 0xE8 PUSH20 0x16BF7302E33D09A24F8E505AC02E4BE3645EB2A9 SWAP5 0x25 0x2C NOT 0xCB LOG1 SWAP6 PUSH14 0x64736F6C634300081E0033000000 ",
+							"sourceMap": "61:570:0:-:0;;;;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "17000",
+								"executionCost": "92",
+								"totalCost": "17092"
+							},
+							"internal": {
+								"update(mapping(int24 => struct Tick.Info storage ref),int24,uint128)": "infinite"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "B"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "MLOAD",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "BYTE",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "EQ",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4E487B7100000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "24"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "ADDRESS",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "MSTORE8",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 61,
+									"end": 631,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212201b1ee87316bf7302e33d09a24f8e505ac02e4be3645eb2a994252c19cba1956d64736f6c634300081e0033",
+									".code": [
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "PUSHDEPLOYADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "ADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "EQ",
+											"source": 0
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 61,
+											"end": 631,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"src/lib/Tick.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.30+commit.73712a01\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/lib/Tick.sol\":\"Tick\"},\"evmVersion\":\"prague\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"src/lib/Tick.sol\":{\"keccak256\":\"0x156ccca1e5e19abdb9f695e01ce128da7edc70c5e1df7c1594a9fcb6fdd9cd64\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://031a328d3d0b817b43df06810ca53447139c1c26f0254b8f3098382ec7545478\",\"dweb:/ipfs/QmVeLbzKC4fxEXxcxuW5xVZaerz2CEtwSxTgJd8CFoSLxQ\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"src/lib/Tick.sol": {
+				"ast": {
+					"absolutePath": "src/lib/Tick.sol",
+					"exportedSymbols": {
+						"Tick": [
+							57
+						]
+					},
+					"id": 58,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".14"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "33:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "Tick",
+							"contractDependencies": [],
+							"contractKind": "library",
+							"fullyImplemented": true,
+							"id": 57,
+							"linearizedBaseContracts": [
+								57
+							],
+							"name": "Tick",
+							"nameLocation": "69:4:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"canonicalName": "Tick.Info",
+									"id": 6,
+									"members": [
+										{
+											"constant": false,
+											"id": 3,
+											"mutability": "mutable",
+											"name": "initialized",
+											"nameLocation": "109:11:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 6,
+											"src": "104:16:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_bool",
+												"typeString": "bool"
+											},
+											"typeName": {
+												"id": 2,
+												"name": "bool",
+												"nodeType": "ElementaryTypeName",
+												"src": "104:4:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												}
+											},
+											"visibility": "internal"
+										},
+										{
+											"constant": false,
+											"id": 5,
+											"mutability": "mutable",
+											"name": "liquidity",
+											"nameLocation": "139:9:0",
+											"nodeType": "VariableDeclaration",
+											"scope": 6,
+											"src": "131:17:0",
+											"stateVariable": false,
+											"storageLocation": "default",
+											"typeDescriptions": {
+												"typeIdentifier": "t_uint128",
+												"typeString": "uint128"
+											},
+											"typeName": {
+												"id": 4,
+												"name": "uint128",
+												"nodeType": "ElementaryTypeName",
+												"src": "131:7:0",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint128",
+													"typeString": "uint128"
+												}
+											},
+											"visibility": "internal"
+										}
+									],
+									"name": "Info",
+									"nameLocation": "88:4:0",
+									"nodeType": "StructDefinition",
+									"scope": 57,
+									"src": "81:75:0",
+									"visibility": "public"
+								},
+								{
+									"body": {
+										"id": 55,
+										"nodeType": "Block",
+										"src": "305:321:0",
+										"statements": [
+											{
+												"assignments": [
+													22
+												],
+												"declarations": [
+													{
+														"constant": false,
+														"id": 22,
+														"mutability": "mutable",
+														"name": "tickInfo",
+														"nameLocation": "334:8:0",
+														"nodeType": "VariableDeclaration",
+														"scope": 55,
+														"src": "316:26:0",
+														"stateVariable": false,
+														"storageLocation": "storage",
+														"typeDescriptions": {
+															"typeIdentifier": "t_struct$_Info_$6_storage_ptr",
+															"typeString": "struct Tick.Info"
+														},
+														"typeName": {
+															"id": 21,
+															"nodeType": "UserDefinedTypeName",
+															"pathNode": {
+																"id": 20,
+																"name": "Tick.Info",
+																"nameLocations": [
+																	"316:4:0",
+																	"321:4:0"
+																],
+																"nodeType": "IdentifierPath",
+																"referencedDeclaration": 6,
+																"src": "316:9:0"
+															},
+															"referencedDeclaration": 6,
+															"src": "316:9:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_struct$_Info_$6_storage_ptr",
+																"typeString": "struct Tick.Info"
+															}
+														},
+														"visibility": "internal"
+													}
+												],
+												"id": 26,
+												"initialValue": {
+													"baseExpression": {
+														"id": 23,
+														"name": "self",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 11,
+														"src": "345:4:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_mapping$_t_int24_$_t_struct$_Info_$6_storage_$",
+															"typeString": "mapping(int24 => struct Tick.Info storage ref)"
+														}
+													},
+													"id": 25,
+													"indexExpression": {
+														"id": 24,
+														"name": "tick",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 13,
+														"src": "350:4:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_int24",
+															"typeString": "int24"
+														}
+													},
+													"isConstant": false,
+													"isLValue": true,
+													"isPure": false,
+													"lValueRequested": false,
+													"nodeType": "IndexAccess",
+													"src": "345:10:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_struct$_Info_$6_storage",
+														"typeString": "struct Tick.Info storage ref"
+													}
+												},
+												"nodeType": "VariableDeclarationStatement",
+												"src": "316:39:0"
+											},
+											{
+												"assignments": [
+													28
+												],
+												"declarations": [
+													{
+														"constant": false,
+														"id": 28,
+														"mutability": "mutable",
+														"name": "liquidityBefore",
+														"nameLocation": "374:15:0",
+														"nodeType": "VariableDeclaration",
+														"scope": 55,
+														"src": "366:23:0",
+														"stateVariable": false,
+														"storageLocation": "default",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														},
+														"typeName": {
+															"id": 27,
+															"name": "uint128",
+															"nodeType": "ElementaryTypeName",
+															"src": "366:7:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_uint128",
+																"typeString": "uint128"
+															}
+														},
+														"visibility": "internal"
+													}
+												],
+												"id": 31,
+												"initialValue": {
+													"expression": {
+														"id": 29,
+														"name": "tickInfo",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 22,
+														"src": "392:8:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_struct$_Info_$6_storage_ptr",
+															"typeString": "struct Tick.Info storage pointer"
+														}
+													},
+													"id": 30,
+													"isConstant": false,
+													"isLValue": true,
+													"isPure": false,
+													"lValueRequested": false,
+													"memberLocation": "401:9:0",
+													"memberName": "liquidity",
+													"nodeType": "MemberAccess",
+													"referencedDeclaration": 5,
+													"src": "392:18:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint128",
+														"typeString": "uint128"
+													}
+												},
+												"nodeType": "VariableDeclarationStatement",
+												"src": "366:44:0"
+											},
+											{
+												"assignments": [
+													33
+												],
+												"declarations": [
+													{
+														"constant": false,
+														"id": 33,
+														"mutability": "mutable",
+														"name": "liquidityAfter",
+														"nameLocation": "429:14:0",
+														"nodeType": "VariableDeclaration",
+														"scope": 55,
+														"src": "421:22:0",
+														"stateVariable": false,
+														"storageLocation": "default",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														},
+														"typeName": {
+															"id": 32,
+															"name": "uint128",
+															"nodeType": "ElementaryTypeName",
+															"src": "421:7:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_uint128",
+																"typeString": "uint128"
+															}
+														},
+														"visibility": "internal"
+													}
+												],
+												"id": 37,
+												"initialValue": {
+													"commonType": {
+														"typeIdentifier": "t_uint128",
+														"typeString": "uint128"
+													},
+													"id": 36,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": false,
+													"lValueRequested": false,
+													"leftExpression": {
+														"id": 34,
+														"name": "liquidityBefore",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 28,
+														"src": "446:15:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														}
+													},
+													"nodeType": "BinaryOperation",
+													"operator": "+",
+													"rightExpression": {
+														"id": 35,
+														"name": "liquidityDelta",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 15,
+														"src": "464:14:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														}
+													},
+													"src": "446:32:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint128",
+														"typeString": "uint128"
+													}
+												},
+												"nodeType": "VariableDeclarationStatement",
+												"src": "421:57:0"
+											},
+											{
+												"condition": {
+													"commonType": {
+														"typeIdentifier": "t_uint128",
+														"typeString": "uint128"
+													},
+													"id": 40,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": false,
+													"lValueRequested": false,
+													"leftExpression": {
+														"id": 38,
+														"name": "liquidityBefore",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 28,
+														"src": "495:15:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														}
+													},
+													"nodeType": "BinaryOperation",
+													"operator": "==",
+													"rightExpression": {
+														"hexValue": "30",
+														"id": 39,
+														"isConstant": false,
+														"isLValue": false,
+														"isPure": true,
+														"kind": "number",
+														"lValueRequested": false,
+														"nodeType": "Literal",
+														"src": "514:1:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_rational_0_by_1",
+															"typeString": "int_const 0"
+														},
+														"value": "0"
+													},
+													"src": "495:20:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bool",
+														"typeString": "bool"
+													}
+												},
+												"id": 48,
+												"nodeType": "IfStatement",
+												"src": "491:80:0",
+												"trueBody": {
+													"id": 47,
+													"nodeType": "Block",
+													"src": "517:54:0",
+													"statements": [
+														{
+															"expression": {
+																"id": 45,
+																"isConstant": false,
+																"isLValue": false,
+																"isPure": false,
+																"lValueRequested": false,
+																"leftHandSide": {
+																	"expression": {
+																		"id": 41,
+																		"name": "tickInfo",
+																		"nodeType": "Identifier",
+																		"overloadedDeclarations": [],
+																		"referencedDeclaration": 22,
+																		"src": "532:8:0",
+																		"typeDescriptions": {
+																			"typeIdentifier": "t_struct$_Info_$6_storage_ptr",
+																			"typeString": "struct Tick.Info storage pointer"
+																		}
+																	},
+																	"id": 43,
+																	"isConstant": false,
+																	"isLValue": true,
+																	"isPure": false,
+																	"lValueRequested": true,
+																	"memberLocation": "541:11:0",
+																	"memberName": "initialized",
+																	"nodeType": "MemberAccess",
+																	"referencedDeclaration": 3,
+																	"src": "532:20:0",
+																	"typeDescriptions": {
+																		"typeIdentifier": "t_bool",
+																		"typeString": "bool"
+																	}
+																},
+																"nodeType": "Assignment",
+																"operator": "=",
+																"rightHandSide": {
+																	"hexValue": "74727565",
+																	"id": 44,
+																	"isConstant": false,
+																	"isLValue": false,
+																	"isPure": true,
+																	"kind": "bool",
+																	"lValueRequested": false,
+																	"nodeType": "Literal",
+																	"src": "555:4:0",
+																	"typeDescriptions": {
+																		"typeIdentifier": "t_bool",
+																		"typeString": "bool"
+																	},
+																	"value": "true"
+																},
+																"src": "532:27:0",
+																"typeDescriptions": {
+																	"typeIdentifier": "t_bool",
+																	"typeString": "bool"
+																}
+															},
+															"id": 46,
+															"nodeType": "ExpressionStatement",
+															"src": "532:27:0"
+														}
+													]
+												}
+											},
+											{
+												"expression": {
+													"id": 53,
+													"isConstant": false,
+													"isLValue": false,
+													"isPure": false,
+													"lValueRequested": false,
+													"leftHandSide": {
+														"expression": {
+															"id": 49,
+															"name": "tickInfo",
+															"nodeType": "Identifier",
+															"overloadedDeclarations": [],
+															"referencedDeclaration": 22,
+															"src": "583:8:0",
+															"typeDescriptions": {
+																"typeIdentifier": "t_struct$_Info_$6_storage_ptr",
+																"typeString": "struct Tick.Info storage pointer"
+															}
+														},
+														"id": 51,
+														"isConstant": false,
+														"isLValue": true,
+														"isPure": false,
+														"lValueRequested": true,
+														"memberLocation": "592:9:0",
+														"memberName": "liquidity",
+														"nodeType": "MemberAccess",
+														"referencedDeclaration": 5,
+														"src": "583:18:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														}
+													},
+													"nodeType": "Assignment",
+													"operator": "=",
+													"rightHandSide": {
+														"id": 52,
+														"name": "liquidityAfter",
+														"nodeType": "Identifier",
+														"overloadedDeclarations": [],
+														"referencedDeclaration": 33,
+														"src": "604:14:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_uint128",
+															"typeString": "uint128"
+														}
+													},
+													"src": "583:35:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint128",
+														"typeString": "uint128"
+													}
+												},
+												"id": 54,
+												"nodeType": "ExpressionStatement",
+												"src": "583:35:0"
+											}
+										]
+									},
+									"id": 56,
+									"implemented": true,
+									"kind": "function",
+									"modifiers": [],
+									"name": "update",
+									"nameLocation": "177:6:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 16,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 11,
+												"mutability": "mutable",
+												"name": "self",
+												"nameLocation": "230:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 56,
+												"src": "194:40:0",
+												"stateVariable": false,
+												"storageLocation": "storage",
+												"typeDescriptions": {
+													"typeIdentifier": "t_mapping$_t_int24_$_t_struct$_Info_$6_storage_$",
+													"typeString": "mapping(int24 => struct Tick.Info)"
+												},
+												"typeName": {
+													"id": 10,
+													"keyName": "",
+													"keyNameLocation": "-1:-1:-1",
+													"keyType": {
+														"id": 7,
+														"name": "int24",
+														"nodeType": "ElementaryTypeName",
+														"src": "202:5:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_int24",
+															"typeString": "int24"
+														}
+													},
+													"nodeType": "Mapping",
+													"src": "194:27:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_mapping$_t_int24_$_t_struct$_Info_$6_storage_$",
+														"typeString": "mapping(int24 => struct Tick.Info)"
+													},
+													"valueName": "",
+													"valueNameLocation": "-1:-1:-1",
+													"valueType": {
+														"id": 9,
+														"nodeType": "UserDefinedTypeName",
+														"pathNode": {
+															"id": 8,
+															"name": "Tick.Info",
+															"nameLocations": [
+																"211:4:0",
+																"216:4:0"
+															],
+															"nodeType": "IdentifierPath",
+															"referencedDeclaration": 6,
+															"src": "211:9:0"
+														},
+														"referencedDeclaration": 6,
+														"src": "211:9:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_struct$_Info_$6_storage_ptr",
+															"typeString": "struct Tick.Info"
+														}
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 13,
+												"mutability": "mutable",
+												"name": "tick",
+												"nameLocation": "251:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 56,
+												"src": "245:10:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_int24",
+													"typeString": "int24"
+												},
+												"typeName": {
+													"id": 12,
+													"name": "int24",
+													"nodeType": "ElementaryTypeName",
+													"src": "245:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_int24",
+														"typeString": "int24"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 15,
+												"mutability": "mutable",
+												"name": "liquidityDelta",
+												"nameLocation": "274:14:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 56,
+												"src": "266:22:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint128",
+													"typeString": "uint128"
+												},
+												"typeName": {
+													"id": 14,
+													"name": "uint128",
+													"nodeType": "ElementaryTypeName",
+													"src": "266:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint128",
+														"typeString": "uint128"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "183:112:0"
+									},
+									"returnParameters": {
+										"id": 17,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "305:0:0"
+									},
+									"scope": 57,
+									"src": "168:458:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "internal"
+								}
+							],
+							"scope": 58,
+							"src": "61:570:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "33:598:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

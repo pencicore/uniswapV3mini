@@ -1,0 +1,83 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount0Owed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount1Owed",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "uniswapV3MintCallback",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"uniswapV3MintCallback(uint256,uint256,bytes)": {
+					"details": "In the implementation you must pay the pool tokens owed for the minted liquidity. The caller of this method must be checked to be a UniswapV3Pool deployed by the canonical UniswapV3Factory.",
+					"params": {
+						"amount0Owed": "The amount of token0 due to the pool for the minted liquidity",
+						"amount1Owed": "The amount of token1 due to the pool for the minted liquidity"
+					}
+				}
+			},
+			"title": "Callback for IUniswapV3PoolActions#mint",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"uniswapV3MintCallback(uint256,uint256,bytes)": {
+					"notice": "Called to `msg.sender` after minting liquidity to a position from IUniswapV3Pool#mint."
+				}
+			},
+			"notice": "Any contract that calls IUniswapV3PoolActions#mint must implement this interface",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/interfaces/callback/IUniswapV3MintCallback.sol": "IUniswapV3MintCallback"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/interfaces/callback/IUniswapV3MintCallback.sol": {
+			"keccak256": "0x8dbe3d6c23da7bb08718f050ff8474f94367f833c0587670435eb2d4b4b3ae79",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://928a138d8c7953049f7f06dc4b1c9fdc244c129edbecf550b5cc9d079bed3405",
+				"dweb:/ipfs/QmZM7eTaxzp9LeQqrrzKuJt15P7BvT6Ba32hazdKrfsJuz"
+			]
+		}
+	},
+	"version": 1
+}

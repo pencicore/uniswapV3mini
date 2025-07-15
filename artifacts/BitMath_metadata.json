@@ -1,0 +1,47 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "This library provides functionality for computing bit properties of an unsigned integer",
+			"kind": "dev",
+			"methods": {},
+			"title": "BitMath",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/lib/BitMath.sol": "BitMath"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/lib/BitMath.sol": {
+			"keccak256": "0xa7a534c102dd551dafdaaff699edcc72bf0afb84cd809571ccb51fcbd3d3492d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fe1c48b78bb6612983e8038b57ea5953e835b1f23439001f292423b257e9760a",
+				"dweb:/ipfs/QmSPSFfzEyZLm3bCyiKN9ZQYQZPH7u5gtTFPcbGZwQ3xFW"
+			]
+		}
+	},
+	"version": 1
+}
