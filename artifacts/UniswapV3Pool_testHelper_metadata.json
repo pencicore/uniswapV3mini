@@ -148,11 +148,11 @@
 			]
 		},
 		"src/UniswapV3Pool.sol": {
-			"keccak256": "0x336c52c81a1a2a80fb4e2ffa181c019e65c048df9db27224559c5056d56fa68d",
+			"keccak256": "0x7d170d386893611e46edea48d3c5a0c57e689459e79ac6d663f4c6f62eb92cb1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f8af6e38f7e4106e76cccc969d6d4aa0b36dd330df56a4d4da4fc101dc6a2977",
-				"dweb:/ipfs/QmawJRnASEzchrzKwsW64mcoRevRCow8HimQKR6GWAgENt"
+				"bzz-raw://744c9969a679eab75bc1c4d58806e554d75d0966c61f10f7e2c17df391320d48",
+				"dweb:/ipfs/QmSYUFad1ZCzHYXCrbHg2bFAJbfz8K5EdzPumiwNN4uaLk"
 			]
 		},
 		"src/interfaces/IERC20.sol": {
@@ -227,6 +227,14 @@
 				"dweb:/ipfs/QmcntWtU1Qjx586SPS3GDgNrGMAyV13VrMgdQopXQAY9AN"
 			]
 		},
+		"src/lib/SwapMath.sol": {
+			"keccak256": "0x5d695a120dc9c31a67db89693b5d6689598a7b023457d86264deb4b8078330b9",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://5589156f6e8bf0d81a56de90198542681dae02b348d22caeab3ec57fad02d597",
+				"dweb:/ipfs/QmYHRqxS9vee3FUVyDNUdrKWhf87zrwFjLk2fQnzeL615C"
+			]
+		},
 		"src/lib/Tick.sol": {
 			"keccak256": "0x35a4d5dc0146b72ed1e530c16d691fa841d2edd786336adea1a306e698bc381a",
 			"license": "BUSL-1.1",
@@ -260,11 +268,11 @@
 			]
 		},
 		"test/UniswapV3Pool_testHelper.sol": {
-			"keccak256": "0x52c273b054d6c502f1148e5d65963283f7f282f94d996bb0a46cf5d34fc01ae6",
+			"keccak256": "0x0ca85a977cff202d414a6fc0b384581f60f0f1983b2e34b969803b069f7862e3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://78b931f720a9ebd281b2448e93538570350c4cae09f57197c37c86714863d481",
-				"dweb:/ipfs/QmPM9sUZE8U9396dBKqMmggqe1uoKaFgYF8PfiZ28i7wYb"
+				"bzz-raw://cb668ef71cb428e1b93a3c1d11510fa038ba30b18bec88c524e16142cdace2bd",
+				"dweb:/ipfs/QmbaGmpoHSZdWpQnheio46MAmmHhHXr56vhtfZRxmsJ38A"
 			]
 		}
 	},

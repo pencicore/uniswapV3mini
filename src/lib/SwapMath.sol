@@ -13,7 +13,7 @@ library SwapMath {
         internal
         pure
         returns (
-            uint160 sqrtPriceNextX96,
+            uint160 sqrtPriceNextX96,   //how many coin 
             uint256 amountIn,
             uint256 amountOut
         )

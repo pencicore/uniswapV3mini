@@ -475,6 +475,16 @@
 						"type": "address"
 					},
 					{
+						"internalType": "bool",
+						"name": "zeroForOne",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amountSpecified",
+						"type": "uint256"
+					},
+					{
 						"internalType": "bytes",
 						"name": "data",
 						"type": "bytes"
@@ -707,11 +717,11 @@
 	},
 	"sources": {
 		"src/UniswapV3Pool.sol": {
-			"keccak256": "0xe8d9c16fda9d689cdbe59d3fb5c10ec7da1ce79e53411b0a136677036e4a1e1c",
+			"keccak256": "0x0c8bffa89a2c66763d946cac10f0391136ad8d3ce5c3ca717b4904d7fc3d6014",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://65aac3f4ce1a09867682399b1ed66c65ca8b701146ea1978e11f9e7337b08617",
-				"dweb:/ipfs/QmenLB47cjTosR5QkWCuhUYc4AwdJtKPvyT33PYavEXEYK"
+				"bzz-raw://179073cbf000392a5fac73bf7369cc9d69e34271c5cee2a1db0fc89c2b3cc3b8",
+				"dweb:/ipfs/QmTj9JLGSKZk1vHS5e7BzXmfMkddo2VEPoaNQpiEwncB76"
 			]
 		},
 		"src/interfaces/IERC20.sol": {
@@ -784,6 +794,14 @@
 			"urls": [
 				"bzz-raw://3be896ccd46161b135499a4a736f719d4b10112af999df66cddd9734fc52ab06",
 				"dweb:/ipfs/QmcntWtU1Qjx586SPS3GDgNrGMAyV13VrMgdQopXQAY9AN"
+			]
+		},
+		"src/lib/SwapMath.sol": {
+			"keccak256": "0x5d695a120dc9c31a67db89693b5d6689598a7b023457d86264deb4b8078330b9",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://5589156f6e8bf0d81a56de90198542681dae02b348d22caeab3ec57fad02d597",
+				"dweb:/ipfs/QmYHRqxS9vee3FUVyDNUdrKWhf87zrwFjLk2fQnzeL615C"
 			]
 		},
 		"src/lib/Tick.sol": {

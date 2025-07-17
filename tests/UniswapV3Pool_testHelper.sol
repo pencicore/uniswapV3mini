@@ -4,7 +4,7 @@ pragma solidity ^0.8.14;
 import "src/interfaces/callback/IUniswapV3MintCallback.sol";
 import "src/interfaces/callback/IUniswapV3SwapCallback.sol";
 import "src/UniswapV3Pool.sol";
-import "test/ERC20.sol";
+import "tests/ERC20.sol";
 
 contract UniswapV3Pool_testHelper is IUniswapV3MintCallback, IUniswapV3SwapCallback{
     
@@ -19,6 +19,7 @@ contract UniswapV3Pool_testHelper is IUniswapV3MintCallback, IUniswapV3SwapCallb
     function uniswapV3MintCallback(uint256 amount0, uint256 amount1, bytes calldata data) external  {
         erc0.transfer(msg.sender, amount0);
         erc1.transfer(msg.sender, amount1);
+        data;
     }
     
     function uniswapV3SwapCallback(
@@ -29,7 +30,7 @@ contract UniswapV3Pool_testHelper is IUniswapV3MintCallback, IUniswapV3SwapCallb
         if (amount0 > 0) {
             erc0.transfer(msg.sender, uint256(amount0));
         }
-
+        data;
         if (amount1 > 0) {
             erc1.transfer(msg.sender, uint256(amount1));
         }

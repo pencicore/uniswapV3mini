@@ -142,7 +142,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"test/UniswapV3Pool_test.sol": "UniswapV3Pool_test"
+			"tests/UniswapV3Pool_test.sol": "UniswapV3Pool_test"
 		},
 		"evmVersion": "prague",
 		"libraries": {},
@@ -181,11 +181,11 @@
 			]
 		},
 		"src/UniswapV3Pool.sol": {
-			"keccak256": "0x14f8a324358e36dd9e83b7d3a13455dcb9e1c57da41b145c25d5a9b468091fcd",
+			"keccak256": "0x7d170d386893611e46edea48d3c5a0c57e689459e79ac6d663f4c6f62eb92cb1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4bd30976798283f3592fb8267bb416140688bb68cc26537d48e73ea2e0024115",
-				"dweb:/ipfs/QmdviLp6p8jYb5yVnupNtckFZNq3htJico4tqLVRsY5uWY"
+				"bzz-raw://744c9969a679eab75bc1c4d58806e554d75d0966c61f10f7e2c17df391320d48",
+				"dweb:/ipfs/QmSYUFad1ZCzHYXCrbHg2bFAJbfz8K5EdzPumiwNN4uaLk"
 			]
 		},
 		"src/interfaces/IERC20.sol": {
@@ -220,23 +220,79 @@
 				"dweb:/ipfs/QmdZXMdDWgMEFMS8rQtR5QN5KdLSZUuSmd6dQsjAKN8DFA"
 			]
 		},
-		"src/lib/Position.sol": {
-			"keccak256": "0xea50f3e9b175546df60c8fe16fca5b9576fcd4c53d5ae1d2173c01d26285c2b6",
+		"src/lib/BitMath.sol": {
+			"keccak256": "0x7a2051864fa0e8705564bde430557a6e9bc6d7765551f1a3b6ef8c8604eee313",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://28e81d5a4f36365c170097e7c5f208fcef3ceb87d082bf79450e69a678cd0c78",
+				"dweb:/ipfs/QmNrHt2Vw2iLQ7JNRsVafYnaJqxxDSHUCQ8W9wMxosheRV"
+			]
+		},
+		"src/lib/FixedPoint96.sol": {
+			"keccak256": "0x2af6468434f30acf1bf0fa92c02c1bcfded878b568fd376687dceeaae2ce5000",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://ee84c31e8d79f8ca5538fc453bc7b52b9757c3400337a6cf03303631fbc9f620",
+				"dweb:/ipfs/QmfWC816uyiXW8UARZJcgTGnHyoYgdfNRZ9Awtxw2TDFmK"
+			]
+		},
+		"src/lib/Math.sol": {
+			"keccak256": "0x9011dcd46af40bd23344240e7a9535cd0eb9dab637a3e7c81333e837071ed64f",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://c0d54cec48e2a1d4ed65e26fa04e0eeb712ad8b6707d4c79a8d600e69e39b4a8",
+				"dweb:/ipfs/QmUrJVytg1g6ixzynY7Mp2SiH6NFrgBtMNWG7YHS2Sx7oW"
+			]
+		},
+		"src/lib/PRBMath.sol": {
+			"keccak256": "0x9adb90635cbd067f1d25b2979c8816564ea1018dbbbd0d865ac5e4b29d6d9bf1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3fe96cedd3f53db248781943b7c37d91aa5ccb31e97d337b33c355f1474144dc",
-				"dweb:/ipfs/QmWMiQj3FPhTUDt5HU7e4YMnYnbnheVBQfEpmr6H7YqBPz"
+				"bzz-raw://7e55f9be29babfd960a697723aaa4f9142dc3d00251eda8e4853ddb65be70cb9",
+				"dweb:/ipfs/QmdoV8yDxLFHhyKb8HFRzLjmEopyfMC1rX8iyiePSEFc97"
+			]
+		},
+		"src/lib/Position.sol": {
+			"keccak256": "0x62d2ab06531ac4a0f60c9daa994ae38e6a82c2195022fa4b04c0cf589468f8d2",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://3be896ccd46161b135499a4a736f719d4b10112af999df66cddd9734fc52ab06",
+				"dweb:/ipfs/QmcntWtU1Qjx586SPS3GDgNrGMAyV13VrMgdQopXQAY9AN"
+			]
+		},
+		"src/lib/SwapMath.sol": {
+			"keccak256": "0x5d695a120dc9c31a67db89693b5d6689598a7b023457d86264deb4b8078330b9",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://5589156f6e8bf0d81a56de90198542681dae02b348d22caeab3ec57fad02d597",
+				"dweb:/ipfs/QmYHRqxS9vee3FUVyDNUdrKWhf87zrwFjLk2fQnzeL615C"
 			]
 		},
 		"src/lib/Tick.sol": {
-			"keccak256": "0x8221afe30bd48c9a8cb8fef21892ff8d688ef28f68eedf12adb36dbaeab7c75c",
-			"license": "MIT",
+			"keccak256": "0x35a4d5dc0146b72ed1e530c16d691fa841d2edd786336adea1a306e698bc381a",
+			"license": "BUSL-1.1",
 			"urls": [
-				"bzz-raw://07e3c65cb8706bdf82db13bd453e15d0d156bbfd6430e8b970dc29e7eae2b3a2",
-				"dweb:/ipfs/QmNw1i85z2navzQDb5eNEpzszUVjcfuMYo3q2Pj8QFneAg"
+				"bzz-raw://1d17f41a71529f5eccf9c3af0a8d4693049950a7f46f6c5c97db70fd14d866cf",
+				"dweb:/ipfs/QmcUjNxYXpBMErZpxF65XeA2fVg6R9sPy6gFGZEEcFR9Ud"
 			]
 		},
-		"test/ERC20.sol": {
+		"src/lib/TickBitmap.sol": {
+			"keccak256": "0xa430211db40b0cf69be4f166c7764ac3d2ab3a494ebfdec27d1d3e69bd961d1c",
+			"license": "BUSL-1.1",
+			"urls": [
+				"bzz-raw://12ed04d4d2ef0939d532a400f6a3e8dddbad71f9938f1caccd624f463e70296a",
+				"dweb:/ipfs/Qmcpf15LJRtGFT81KR2unB3YLKaUF5naiSJkiDYtqnFpfD"
+			]
+		},
+		"src/lib/TickMath.sol": {
+			"keccak256": "0x66bbfe54186fc7cc57565dbb20889526579a661c7971f7d4276bd7a600acbe81",
+			"license": "GPL-2.0-or-later",
+			"urls": [
+				"bzz-raw://5bf2d491cd7ad9c8325715ad81245f0bb36e178b53e3acd1424af01ec09c48a7",
+				"dweb:/ipfs/QmfXyEWsYun2KLtZALaN7HRGUxViEzr2gWkvGULWTtnRAt"
+			]
+		},
+		"tests/ERC20.sol": {
 			"keccak256": "0xbbb5fe47c15de4af3db910b79164debe125088ad59d24da73beedcd6bc6c96f9",
 			"license": "MIT",
 			"urls": [
@@ -244,20 +300,20 @@
 				"dweb:/ipfs/Qme6nto9KEVFTfzpqWVWcde5vQxU84h6MJXj8MfdWgTj6i"
 			]
 		},
-		"test/UniswapV3Pool_test.sol": {
-			"keccak256": "0x2b6edd37e7a37617e7ff606228b6552b8f0437f5418db5c14adbecc8520da0c8",
+		"tests/UniswapV3Pool_test.sol": {
+			"keccak256": "0xd013716c37a7b353e4b028cd91a92f02c4cc509df86b5a4b341035df84089084",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e215e74ea2cdc18226bf7f6a3951924c8b416c266464440bef3c2fc4a1467e7b",
-				"dweb:/ipfs/QmZaG3ZuUnE6QRLSDP1ChQqyH5QWwqxHnY2rF8PCi1KiT2"
+				"bzz-raw://c9a0400a8f52fc3764b1a10a09751e4df0344a8c795f280734e2498bc9f49d56",
+				"dweb:/ipfs/Qmbeb5NuRT2DyJX4SDhUksbAoLrQMg2kLH2tjEaaiofFx1"
 			]
 		},
-		"test/UniswapV3Pool_testHelper.sol": {
-			"keccak256": "0x52c273b054d6c502f1148e5d65963283f7f282f94d996bb0a46cf5d34fc01ae6",
+		"tests/UniswapV3Pool_testHelper.sol": {
+			"keccak256": "0xc5377edd8554d6dbac31ba9259f1c6fb01b4fea4d3957ad5157b8c2c63c545c8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://78b931f720a9ebd281b2448e93538570350c4cae09f57197c37c86714863d481",
-				"dweb:/ipfs/QmPM9sUZE8U9396dBKqMmggqe1uoKaFgYF8PfiZ28i7wYb"
+				"bzz-raw://8d5a64f17141cf7c6f50a6cd01dbcbd0a24c9acae22518a051ec92205f05f18c",
+				"dweb:/ipfs/QmZdC5YxMsDSup9HxQJYNv1FGk7Xkf3132VkT6CSx1qqTQ"
 			]
 		}
 	},
