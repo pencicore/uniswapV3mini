@@ -196,37 +196,19 @@ contract UniswapV3Pool is
         }
 
         (amount0, amount1) = zeroForOne
-            ? (
-                int256(amountSpecified - state.amountSpecifiedRemaining),
-                -int256(state.amountCalculated)
-            )
-            : (
-                -int256(state.amountCalculated),
-                int256(amountSpecified - state.amountSpecifiedRemaining)
-            );
+            ? (int256(amountSpecified - state.amountSpecifiedRemaining), -int256(state.amountCalculated))
+            : (-int256(state.amountCalculated), int256(amountSpecified - state.amountSpecifiedRemaining));
 
         if (zeroForOne) {
             IERC20(token1).transfer(recipient, uint256(-amount1));
-
             uint256 balance0Before = balance0();
-            IUniswapV3SwapCallback(msg.sender).uniswapV3SwapCallback(
-                amount0,
-                amount1,
-                data
-            );
-            if (balance0Before + uint256(amount0) > balance0())
-                revert InsufficientInputAmount();
+            IUniswapV3SwapCallback(msg.sender).uniswapV3SwapCallback(amount0, amount1, data);
+            if (balance0Before + uint256(amount0) > balance0()) revert InsufficientInputAmount();
         } else {
             IERC20(token0).transfer(recipient, uint256(-amount0));
-
             uint256 balance1Before = balance1();
-            IUniswapV3SwapCallback(msg.sender).uniswapV3SwapCallback(
-                amount0,
-                amount1,
-                data
-            );
-            if (balance1Before + uint256(amount1) > balance1())
-                revert InsufficientInputAmount();
+            IUniswapV3SwapCallback(msg.sender).uniswapV3SwapCallback(amount0, amount1, data);
+            if (balance1Before + uint256(amount1) > balance1()) revert InsufficientInputAmount();
         }
  
         emit Swap(

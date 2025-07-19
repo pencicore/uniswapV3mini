@@ -717,11 +717,11 @@
 	},
 	"sources": {
 		"src/UniswapV3Pool.sol": {
-			"keccak256": "0x0c8bffa89a2c66763d946cac10f0391136ad8d3ce5c3ca717b4904d7fc3d6014",
+			"keccak256": "0x9a7c03667530453cf1f197a1318319d014bf2279ac9369b2a8e44212a5acf438",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://179073cbf000392a5fac73bf7369cc9d69e34271c5cee2a1db0fc89c2b3cc3b8",
-				"dweb:/ipfs/QmTj9JLGSKZk1vHS5e7BzXmfMkddo2VEPoaNQpiEwncB76"
+				"bzz-raw://3f9514bbfdec697181ee60561617e89a4efcc404e2275969014a681099d8ca2f",
+				"dweb:/ipfs/QmQoqU8Yk6tNrtzVTonuRkfg7EUMgqihAPYZ1GMJkizNiw"
 			]
 		},
 		"src/interfaces/IERC20.sol": {
@@ -797,11 +797,11 @@
 			]
 		},
 		"src/lib/SwapMath.sol": {
-			"keccak256": "0x5d695a120dc9c31a67db89693b5d6689598a7b023457d86264deb4b8078330b9",
+			"keccak256": "0x75c0b22a93f1bea04cd558949472b6fe5de4abd9d497145f204b2a3f6410643e",
 			"license": "BUSL-1.1",
 			"urls": [
-				"bzz-raw://5589156f6e8bf0d81a56de90198542681dae02b348d22caeab3ec57fad02d597",
-				"dweb:/ipfs/QmYHRqxS9vee3FUVyDNUdrKWhf87zrwFjLk2fQnzeL615C"
+				"bzz-raw://db14b59972d8dd224d82211f893573a958002fc153b5e53977ebfd217885086b",
+				"dweb:/ipfs/QmUUCuAAnFCnmh2zprvpF3ENmWwuKiPWk1wMTp3LidCUch"
 			]
 		},
 		"src/lib/Tick.sol": {
